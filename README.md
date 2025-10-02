@@ -47,10 +47,13 @@ Covers multiple years of sales across categories, sub-categories, and regions.
 
 Some of the key queries used to generate insights include:
 
-Total Sales Revenue
-
-SELECT ROUND(SUM(Sales), 2) AS total_revenue
-FROM Orders;
+### 1. Find the total sales for each Category and sort them in descending order
+```sql
+select Category,round(sum(Sales),2) as total_sales
+from superstore
+group by Category
+order by total_sales desc;
+```
 
 
 Top 5 Product Categories by Revenue
